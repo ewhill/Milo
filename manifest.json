@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Milo",
+    "short_name": "Milo",
+    "author": "Eric Hill (3c623e657269633c2f62@gmail.com)",
+    "description": "Hook into 'window' and 'document' objects, log to console any changes or calls to member properties and functions respectively.",
+    "version": "1.0.0",
+    
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["js/inject.js"],
+        "all_frames": true,
+        "runAt": "document_end"
+    }],
+    
+    "web_accessible_resources": ["js/WatchDog.js"],
+    
+    "browser_action": {
+        "default_icon": "milo128.png",
+        "default_popup": "index.html",
+        "default_title": "Milo"
+    },
+    
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    
+    "icons": {
+        "16": "milo16.png",
+        "32": "milo32.png",
+        "64": "milo64.png",
+        "128": "milo128.png"
+    }
+}
