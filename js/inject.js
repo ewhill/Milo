@@ -32,9 +32,9 @@ function inject() {
         // We need the iframe document object, different browsers different ways
         var frameDocument = newFrame.document;
         
-        if (newFrame.contentDocument)
+        if(newFrame.contentDocument)
             frameDocument = newFrame.contentDocument;
-        else if (newFrame.contentWindow)
+        else if(newFrame.contentWindow)
             frameDocument = newFrame.contentWindow.document;
         
         // We open the document of the empty frame and we write desired content.
